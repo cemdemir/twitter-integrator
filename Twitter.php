@@ -3,9 +3,9 @@
 class Twitter
 {
     // API Keys
-    const CONSUMER_KEY          = 'nfYXJKlIm29DDDu0fW7jr7bZu';
-    const CONSUMER_SECRET       = '7e2NTHr5f56IPvCJFcnHQjyax2lH1BCgr934vEhSGSLPuUeMqJ';
-    const CALLBACK_URL          = 'http://31.210.54.102/response.php';
+    const CONSUMER_KEY          = '';
+    const CONSUMER_SECRET       = '';
+    const CALLBACK_URL          = '';
 
     // Token URLs
     const REQUEST_TOKEN_URL = 'https://api.twitter.com/oauth/request_token';
