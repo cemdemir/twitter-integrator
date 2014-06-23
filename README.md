@@ -1,7 +1,7 @@
-twitter-integrator
+Twitter Integrator
 ==================
 
-twitter-integrator is a client library to use Twitter Rest API.
+twitter-integrator is a PHP client library to use Twitter Rest API.
 
 Basic Usage
 ------------------
@@ -21,3 +21,34 @@ Basic Usage
     
     $response = Twitter::make()->get($url, $params);
 
+How to Get Temporary Tokens
+------------------
+
+    $twitter    = Twitter::make();
+    $response   = $twitter->requestToken();
+    $authorize  = $twitter->authorizeUrl($response['oauth_token']);
+    header("Location: $authorize"); exit;
+
+How to Get Real Tokens
+------------------
+
+**Twitter Response**
+
+    $tempTokens = array(
+        'oauth_token'       => $_GET['oauth_token'],
+        'oauth_verifier'    => $_GET['oauth_verifier']
+    );
+
+**Get access tokens**
+
+    $twitter    = Twitter::make();
+    $response   = $twitter->accessToken($tempTokens);
+
+**Store the tokens**
+
+    $_SESSION['oauth_token']        = $response['oauth_token'];
+    $_SESSION['oauth_token_secret'] = $response['oauth_token_secret'];
+    $_SESSION['user_id']            = $response['user_id'];
+    $_SESSION['screen_name']        = $response['screen_name'];
+
+D
