@@ -6,11 +6,11 @@ twitter-integrator is a client library to use Twitter Rest API.
 Basic Usage
 ------------------
 
-URL
+**URL**
     
     $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
 
-Params
+**Params**
     
     
     $params = array(
@@ -20,6 +20,6 @@ Params
     
     
 
-Request
+**Request**
     
     $response = Twitter::make()->get($url, $params);
