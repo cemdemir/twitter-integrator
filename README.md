@@ -6,6 +6,8 @@ twitter-integrator is a PHP client library to use Twitter Rest API.
 Basic Usage
 ------------------
 
+You can make a basic request without access tokens. It means, the request is made by application itself.
+
 **URL**
     
     $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
@@ -21,7 +23,7 @@ Basic Usage
     
     $response = Twitter::make()->get($url, $params);
 
-How to Get Temporary Tokens
+Login with Twitter 
 ------------------
 
     $twitter    = Twitter::make();
