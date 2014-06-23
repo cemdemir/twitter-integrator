@@ -8,19 +8,13 @@ Basic Usage
 
 You can make a basic request without access tokens. It means, the request is made by application itself.
 
-URL
-    
     $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-
-Parameters
 
     $params = array(
         'screen_name'   => 'php_net',
         'count'         => 100
     );
 
-Request
-    
     $response = Twitter::make()->get($url, $params);
 
 Login with Twitter 
