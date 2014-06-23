@@ -1,10 +1,10 @@
 twitter-integrator
-------------------
+==================
 
 twitter-integrator is a client library to use Twitter Rest API.
 
 Basic Usage
-==================
+------------------
 
 URL
     
