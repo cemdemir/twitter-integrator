@@ -10,15 +10,12 @@ Basic Usage
     
     $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
 
-**Params**
-    
-    
+**Parameters**
+
     $params = array(
         'screen_name'   => 'php_net',
         'count'         => 100
     );
-    
-    
 
 **Request**
     
