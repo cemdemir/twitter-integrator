@@ -12,14 +12,14 @@ URL
 
 Params
     
-    ```
+    
     $params = array(
         'screen_name'   => 'php_net',
         'count'         => 100
     );
-    ```
+    
     
 
 Request
     
-    ```$response = Twitter::make()->get($url, $params);```
+    $response = Twitter::make()->get($url, $params);
