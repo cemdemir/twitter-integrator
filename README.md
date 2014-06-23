@@ -20,16 +20,17 @@ You can make a basic request without access tokens. It means, the request is mad
 Login with Twitter Workflow 
 ------------------
 
-1.Generate temporary tokens from Twitter.
-
-2.Generate autorize URL.
-
-3.Redirect user to the Twitter for Authorization.
+**1.Generate temporary tokens from Twitter.**
 
     $twitter    = Twitter::make();
     $response   = $twitter->requestToken();
+
+2.Generate autorize URL.
+
     $authorize  = $twitter->authorizeUrl($response['oauth_token']);
-    
+
+3.Redirect user to the Twitter for Authorization.
+
     header("Location: $authorize"); exit;
 
 4.Get the Twitter response from Authorization.
