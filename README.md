@@ -20,14 +20,17 @@ You can make a basic request without access tokens. It means, the request is mad
 Login with Twitter 
 ------------------
 
+-- Generate temporary tokens from Twitter.
+-- Generate autorize URL.
+-- Redirect user to the Twitter for Authorization.
+
     $twitter    = Twitter::make();
     $response   = $twitter->requestToken();
     $authorize  = $twitter->authorizeUrl($response['oauth_token']);
     
     header("Location: $authorize"); exit;
 
-How to Get Real Tokens
-------------------
+
 
 **Twitter Response**
 
