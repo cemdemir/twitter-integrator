@@ -7,13 +7,16 @@ Basic Usage
 ==================
 
 // URL
-    $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+    ```$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
+    ```
 
 // Params
-    $params = array(
+    ```$params = array(
         'screen_name'   => 'php_net',
         'count'         => 100
     );
+    ```
 
 // Request
-    $response = Twitter::make()->get($url, $params);
+    ```$response = Twitter::make()->get($url, $params);
+    ```
