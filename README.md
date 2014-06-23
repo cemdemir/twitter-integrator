@@ -20,3 +20,4 @@ Basic Usage
 **Request**
     
     $response = Twitter::make()->get($url, $params);
+
