@@ -25,34 +25,34 @@ Login with Twitter Workflow
     $twitter    = Twitter::make();
     $response   = $twitter->requestToken();
 
-2.Generate autorize URL.
+**2.Generate autorize URL.**
 
     $authorize  = $twitter->authorizeUrl($response['oauth_token']);
 
-3.Redirect user to the Twitter for Authorization.
+**3.Redirect user to the Twitter for Authorization.**
 
     header("Location: $authorize"); exit;
 
-4.Get the Twitter response from Authorization.
+**4.Get the Twitter response from Authorization.**
 
     $tempTokens = array(
         'oauth_token'       => $_GET['oauth_token'],
         'oauth_verifier'    => $_GET['oauth_verifier']
     );
 
-5.Generate real access tokens from Twitter.
+**5.Generate real access tokens from Twitter.**
 
     $twitter    = Twitter::make();
     $response   = $twitter->accessToken($tempTokens);
 
-6.Store the tokens.
+**6.Store the tokens.**
 
     $_SESSION['oauth_token']        = $response['oauth_token'];
     $_SESSION['oauth_token_secret'] = $response['oauth_token_secret'];
     $_SESSION['user_id']            = $response['user_id'];
     $_SESSION['screen_name']        = $response['screen_name'];
 
-7.Make a request.
+**7.Make a request.**
 
     $url = 'https://api.twitter.com/1.1/users/lookup.json';
     
