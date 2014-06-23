@@ -1,7 +1,7 @@
 Twitter Integrator
 ==================
 
-twitter-integrator is a PHP client library to use Twitter Rest API and Oauth system.
+twitter-integrator is a PHP client library to use Twitter Rest API with Oauth Authantication system.
 
 Basic Usage
 ------------------
