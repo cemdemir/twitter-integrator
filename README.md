@@ -17,7 +17,7 @@ You can make a basic request without access tokens. It means, the request is mad
 
     $response = Twitter::make()->get($url, $params);
 
-Login with Twitter 
+Login with Twitter Workflow 
 ------------------
 
 1. Generate temporary tokens from Twitter.
@@ -30,23 +30,37 @@ Login with Twitter
     
     header("Location: $authorize"); exit;
 
-**Twitter Response**
+4. Get the Twitter response from Authorization.
 
     $tempTokens = array(
         'oauth_token'       => $_GET['oauth_token'],
         'oauth_verifier'    => $_GET['oauth_verifier']
     );
 
-**Get access tokens**
+5. Generate real access tokens from Twitter.
 
     $twitter    = Twitter::make();
     $response   = $twitter->accessToken($tempTokens);
 
-**Store the tokens**
+6. Store the tokens.
 
     $_SESSION['oauth_token']        = $response['oauth_token'];
     $_SESSION['oauth_token_secret'] = $response['oauth_token_secret'];
     $_SESSION['user_id']            = $response['user_id'];
     $_SESSION['screen_name']        = $response['screen_name'];
 
-D
+7. Make a request.
+
+    $url = 'https://api.twitter.com/1.1/users/lookup.json';
+    
+    $params = array(
+        'screen_name' => 'goddamnclever',
+    );
+    
+    $config = array(
+        'oauth_token'           => $_SESSION['oauth_token'],
+        'oauth_token_secret'    => $_SESSION['oauth_token_secret'],
+    );
+    
+    $response = Twitter::make()->get($url, $params, $config);
+
