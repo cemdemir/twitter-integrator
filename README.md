@@ -24,6 +24,7 @@ Login with Twitter Workflow
 2. Generate autorize URL.
 3. Redirect user to the Twitter for Authorization.
 
+asd
 
     $twitter    = Twitter::make();
     $response   = $twitter->requestToken();
